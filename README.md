@@ -1,4 +1,4 @@
-# 🐾 Animal Detection with YOLOv5 + Twilio Alerts
+# 🐾 Animal Detection and Alert System using Python and OpenCV + Twilio API
 
 Real-time animal detection system using a webcam. Sends SMS alerts when animals like dogs, cats, cows, etc., are spotted — powered by YOLOv5 and Twilio.
 
