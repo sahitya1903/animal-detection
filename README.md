@@ -9,11 +9,15 @@ Real-time animal detection system using a webcam. Sends SMS alerts when animals 
 - Live feed with labeled bounding boxes
 
 ## 🚀 Run
-Run `project.py' in VS Code or any other Python IDE.
+
+- Uncomment the credentials section in 'project.py' and enter your own Twilio credentials.
+- Run `project.py' in VS Code or any other Python IDE.
 
 ## 🛠️ Tools
+
 - Python 3.11+
 - VS Code
 
 ## 📜 License
+
 MIT License
