@@ -1,6 +1,4 @@
-# 🐾 Animal Detection and Alert System using Raspberry Pi and Python
-
-# ML Simulation done using OpenCV + Twilo API + YOLOv5 
+# 🐾 Animal Detection and Alert System using Python and OpenCV + Twilo API + YOLOv5 
 
 Real-time animal detection system using a webcam. Sends SMS alerts when animals like dogs, cats, cows, etc., are spotted — powered by YOLOv5 and Twilio.
 
