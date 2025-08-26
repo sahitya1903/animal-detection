@@ -22,8 +22,5 @@ Real-time animal detection system using a webcam. Sends SMS alerts when animals 
 
 MIT License
 
-<img width="1943" height="1092" alt="image" src="https://github.com/user-attachments/assets/4c62493b-6ab3-4aad-b01d-49360d977556" />
-
-<img width="630" height="979" alt="image" src="https://github.com/user-attachments/assets/ff2a9650-cc07-4ad4-951b-dd687f5d6112" />
 
 
