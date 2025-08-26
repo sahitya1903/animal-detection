@@ -15,7 +15,7 @@ Real-time animal detection system using a webcam. Sends SMS alerts when animals 
 
 ## 🛠️ Tools
 
-- Python 3.11+
+- Python 3.13
 - VS Code
 
 ## 📜 License
