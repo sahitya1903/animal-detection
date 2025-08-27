@@ -27,8 +27,8 @@ It detects animals from a webcam feed and sends an **SMS alert** when an animal 
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/sahitya1903/animal-detection-alert.git
-cd animal-detection-alert
+git clone https://github.com/sahitya1903/animal-detection.git
+cd animal-detection
 ```
 
 ### 2. Create a virtual environment (recommended)
