@@ -1,4 +1,4 @@
-# 🐾 Animal Detection Alert System
+# 🐾 Animal Detection and Alert System
 
 A real-time **animal detection system** using **YOLOv12x**, **OpenCV**, and **Twilio SMS API**.  
 It detects animals from a webcam feed and sends an **SMS alert** when an animal is spotted.  
@@ -6,103 +6,89 @@ It detects animals from a webcam feed and sends an **SMS alert** when an animal 
 ---
 
 ## 🚀 Features
-- Real-time video stream analysis with **YOLOv12x**.
-- Detects animals like **cats, dogs, cows, elephants, birds, etc.**.
-- **Sends SMS alerts** via Twilio only once per detected animal to avoid spam.
-- Live bounding boxes drawn on detected animals.
+- Live video stream analysis with **YOLOv12x**.
+- Detects common animals (cats, dogs, cows, elephants, birds, etc.).
+- Sends **SMS alerts via Twilio** — only once per detected animal to prevent spam.
+- Bounding boxes drawn on detected animals in real time.
 
 ---
 
 ## 📂 Project Structure
-.
+```.
 ├── main.py # Core detection script
 ├── .env # Environment variables (Twilio credentials & phone numbers)
-├── requirements.txt
-└── README.md
-
-yaml
-Copy code
+├── requirements.txt # Python dependencies
+└── README.md # Project documentation
+```
 
 ---
 
 ## ⚙️ Installation
 
 ### 1. Clone the repository
-
-git clone https://github.com/yourusername/animal-detection-alert.git
+```bash
+git clone https://github.com/sahitya1903/animal-detection-alert.git
 cd animal-detection-alert
+```
 
-2. Create a virtual environment (optional but recommended)
-bash
-Copy code
+### 2. Create a virtual environment (recommended)
+```python
 python -m venv venv
-source venv/bin/activate   # On Mac/Linux
-venv\Scripts\activate      # On Windows
-3. Install dependencies
-bash
-Copy code
+source venv/bin/activate   # Mac/Linux
+venv\Scripts\activate      # Windows
+```
+
+### 3. Install dependencies
+```bash
 pip install -r requirements.txt
-requirements.txt should include:
+```
 
-Copy code
-opencv-python
-torch
-ultralytics
-twilio
-python-dotenv
-🔑 Setup
-Create a .env file in the project root:
+## 🔑 Setup
 
-env
-Copy code
+### 1. Create a .env file in the project root:
+
+```env
 ACCOUNT_SID=your_twilio_account_sid
 AUTH_TOKEN=your_twilio_auth_token
 TWILIO_NUMBER=+1234567890
 RECEIVER_NUMBER=+919876543210
-Download YOLOv12x weights:
-Make sure yolo12x.pt is in your project folder.
+```
 
-In your script:
+### 2. Download YOLOv12x weights:
+- Ensure yolo12x.pt is present in your project directory.
 
-python
-Copy code
+Update in code:
+```python
 from ultralytics import YOLO
 model = YOLO("yolo12x.pt")
-▶️ Usage
-Run the detection script:
+```
 
-bash
-Copy code
+### 3. ▶️ Usage
+- Run the detection script:
+
+```bash
 python main.py
-Press Q to exit the live feed.
+```
 
-When an animal is detected, you’ll receive an SMS alert.
+- Press Q to exit the webcam feed.
 
-📊 Model Confidence
-model.conf is the detection confidence threshold.
+- When an animal is detected, an SMS alert will be sent to your registered number.
 
-Recommended value: 0.5–0.6
+### 4. 📊 Model Confidence
+- model.conf sets the detection confidence threshold.
+- Recommended: 0.5 – 0.6
 
-Lower → more detections but risk of false alarms.
+- Lower → more detections, but may include false positives.
+- Higher → fewer detections, but more accurate.
 
-Higher → fewer detections but more accurate.
+```python
+model.conf = 0.5  # Balanced default
+```
 
-python
-Copy code
-model.conf = 0.5  # Default balanced value
-📸 Demo
-(You can add screenshots or GIFs of bounding boxes around animals here)
+## 🛠️ Future Improvements
+- Add email or WhatsApp alerts.
+- Deploy on Raspberry Pi devices.
+- Save detection frames or video logs.
 
-🛠️ Future Improvements
-Add email or WhatsApp alerts.
-
-Deploy on Raspberry Pi for outdoor use.
-
-Save detected frames for later review.
-
-🤝 Contributing
-Pull requests are welcome! For major changes, please open an issue first to discuss what you’d like to change.
-
-📜 License
-MIT
-
+## 📜 License
+This project is licensed under the MIT License.
