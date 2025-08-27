@@ -1,3 +1,7 @@
+from dotenv import load_dotenv
+import os
+load_dotenv('.env')
+
 import cv2
 import torch
 from twilio.rest import Client
@@ -15,12 +19,10 @@ animal_keywords = [
     'goat', 'duck', 'pig', 'hen', 'chicken'
 ]
 
-
-#put original twilio credentials below
-account_sid = 'ABC'
-auth_token = '123'
-twilio_number = '+123'
-receiver_number = '+910000'
+account_sid: str= os.getenv('ACCOUNT_SID')
+auth_token: str= os.getenv('AUTH_TOKEN')
+twilio_number: str= os.getenv('TWILIO_NUMBER')
+receiver_number: str= os.getenv('RECEIVER_NUMBER')
 
 
 client = Client(account_sid, auth_token)
@@ -33,13 +35,13 @@ while True:
     if not ret:
         break
 
-    results = model(frame)  # results is a Results object
-    detections = results[0].boxes  # get detections for first image
+    results = model(frame)  
+    detections = results[0].boxes  
 
     for box in detections:
-        x1, y1, x2, y2 = box.xyxy[0].cpu().numpy().astype(int)  # bounding box
-        conf = float(box.conf[0])  # confidence
-        cls = int(box.cls[0])      # class id
+        x1, y1, x2, y2 = box.xyxy[0].cpu().numpy().astype(int) 
+        conf = float(box.conf[0])  
+        cls = int(box.cls[0])     
         label = model.names[cls]
 
         if any(animal in label.lower() for animal in animal_keywords):
